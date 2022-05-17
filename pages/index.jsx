@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
+import Card from "./components/Card";
 
 // This gets called on every request
 export async function getServerSideProps() {
@@ -35,7 +36,7 @@ export default function Home({ data }) {
       </div>
       <div className={styles.pokemon_container}>
         {data.results.map((pokemon) => (
-          <p key={pokemon.id}>{pokemon.name}</p>
+          <Card key={pokemon.id} pokemon={pokemon} />
         ))}
       </div>
     </>
